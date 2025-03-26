@@ -1,0 +1,44 @@
+# Services
+services:
+  # Apache + PHP
+  apache_php_oo:
+    build:
+      context: ./.docker
+      dockerfile: Dockerfile
+    container_name: spoti
+    # Preparamos un volumen para almacenar nuestro código
+    volumes:
+      - ./src/:/var/www/html
+      - ./.docker/apache/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
+      - ./.docker/php/php.ini:/usr/local/etc/php/php.ini-development
+    expose:
+      - 80
+    ports:
+      - 8081:80
+    networks:
+      - spoti
+    links:
+      - mariadboo
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  mariadboo:
+    image: mariadb
+    command:
+      --default-authentication-plugin=mysql_native_password
+    environment:
+      MARIADB_ROOT_PASSWORD: toor
+      MARIADB_DATABASE: spoti
+      MARIADB_USER: pablo
+      MARIADB_PASSWORD: espino
+    volumes:
+      - ./.docker/mysql:/var/lib/mysql:Z
+    ports:
+      - 3307:3306
+    networks:
+      - spoti
+
+networks:
+  spoti:
+    name: spoti
+    driver: bridge
