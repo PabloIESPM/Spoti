@@ -1,0 +1,2 @@
+- https://www.igdb.com/api
+- https://tailwindcss.com/plus/ui-blocks/preview
