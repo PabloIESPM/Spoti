@@ -1022,6 +1022,285 @@ include_once DIRECTORIO_PLANTILLA . "header.php";
                     </div>
                 </div>
             </div>
+            <!-- Comunidad y social -->
+            <div id="comunidad" class="mb-16 scroll-mt-24">
+                <div class="border-b border-gray-200 pb-4 mb-8">
+                    <h2 class="text-2xl font-bold text-gray-900">6. Comunidad y social</h2>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Interacción comunitaria -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4">Conectar con otros jugadores</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div class="bg-indigo-50 p-4 rounded-lg">
+                                <div class="flex items-center mb-3">
+                                    <div class="h-8 w-8 bg-indigo-100 rounded-full flex items-center justify-center mr-3">
+                                        <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <h4 class="text-sm font-medium text-gray-900">Seguir usuarios</h4>
+                                </div>
+                                <p class="text-xs text-gray-600">Descubre jugadores con gustos similares y sigue su actividad para ver sus últimas valoraciones, listas y logros.</p>
+                            </div>
+
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <div class="flex items-center mb-3">
+                                    <div class="h-8 w-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                                        <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                                        </svg>
+                                    </div>
+                                    <h4 class="text-sm font-medium text-gray-900">Actividad social</h4>
+                                </div>
+                                <p class="text-xs text-gray-600">Comenta y reacciona a las reseñas, listas y actualizaciones de otros usuarios. Usa etiquetas @ para mencionar amigos.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="text-sm font-medium text-gray-900 mb-3">Funciones sociales clave</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <span class="font-medium block mb-1">Feed de actividad</span>
+                                    <span>Sigue las actualizaciones de usuarios y juegos que sigues</span>
+                                </div>
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <span class="font-medium block mb-1">Sistema de mensajes</span>
+                                    <span>Envía mensajes privados a otros miembros</span>
+                                </div>
+                                <div class="bg-white p-3 rounded border border-gray-200">
+                                    <span class="font-medium block mb-1">Logros sociales</span>
+                                    <span>Desbloquea insignias por interacciones comunitarias</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grupos y eventos -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4">Grupos y eventos</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="text-sm font-medium text-gray-900 mb-3">Grupos temáticos</h4>
+                                <p class="text-xs text-gray-600 mb-4">Únete a comunidades sobre géneros específicos, plataformas o temas particulares:</p>
+                                <ul class="space-y-2 text-xs">
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        Discusiones organizadas por temas
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        Retos y eventos exclusivos
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-4 h-4 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        Competiciones amistosas
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <h4 class="text-sm font-medium text-gray-900 mb-3">Eventos comunitarios</h4>
+                                <p class="text-xs text-gray-600 mb-4">Participa en eventos especiales organizados por GameShelf:</p>
+                                <div class="flex items-center text-xs mb-2">
+                                    <span class="w-16 font-medium">Maratones:</span>
+                                    <span>Completa juegos específicos en tiempo limitado</span>
+                                </div>
+                                <div class="flex items-center text-xs mb-2">
+                                    <span class="w-16 font-medium">Votaciones:</span>
+                                    <span>Elige los mejores juegos por categorías</span>
+                                </div>
+                                <div class="flex items-center text-xs">
+                                    <span class="w-16 font-medium">Q&A:</span>
+                                    <span>Charlas con desarrolladores y figuras de la industria</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Funciones Avanzadas -->
+            <div id="funciones-avanzadas" class="mb-16 scroll-mt-24">
+                <div class="border-b border-gray-200 pb-4 mb-8">
+                    <h2 class="text-2xl font-bold text-gray-900">7. Funciones Avanzadas</h2>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Herramientas profesionales -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4">Para usuarios expertos</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="text-sm font-medium text-gray-900 mb-3">Importar/Exportar datos</h4>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <p class="text-xs text-gray-600 mb-3">Sincroniza tu colección con otras plataformas:</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-2 py-1 bg-white text-xs rounded-full border">Steam</span>
+                                        <span class="px-2 py-1 bg-white text-xs rounded-full border">Xbox Live</span>
+                                        <span class="px-2 py-1 bg-white text-xs rounded-full border">PSN</span>
+                                        <span class="px-2 py-1 bg-white text-xs rounded-full border">CSV</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="text-sm font-medium text-gray-900 mb-3">Estadísticas avanzadas</h4>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <div class="flex items-center text-xs mb-2">
+                                        <div class="w-2 h-2 bg-indigo-600 rounded-full mr-2"></div>
+                                        <span>Gráficos de progreso</span>
+                                    </div>
+                                    <div class="flex items-center text-xs mb-2">
+                                        <div class="w-2 h-2 bg-green-600 rounded-full mr-2"></div>
+                                        <span>Análisis de hábitos de juego</span>
+                                    </div>
+                                    <div class="flex items-center text-xs">
+                                        <div class="w-2 h-2 bg-purple-600 rounded-full mr-2"></div>
+                                        <span>Comparativas con la comunidad</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <h4 class="text-sm font-medium text-indigo-800 mb-2">API para desarrolladores</h4>
+                            <p class="text-xs text-indigo-700">Accede a nuestros datos mediante nuestra API pública. Documentación disponible en developers.gameshelf.com</p>
+                        </div>
+                    </div>
+
+                    <!-- Personalización avanzada -->
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4">Personalización avanzada</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                            <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                                <span class="font-medium block mb-1">Etiquetas personalizadas</span>
+                                <span>Crea tus propias categorías para organizar juegos</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                                <span class="font-medium block mb-1">Filtros guardados</span>
+                                <span>Guarda combinaciones complejas de filtros para acceso rápido</span>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                                <span class="font-medium block mb-1">Temas visuales</span>
+                                <span>Personaliza colores y diseño de tu perfil</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preguntas frecuentes -->
+            <div id="preguntas-frecuentes" class="mb-16 scroll-mt-24">
+                <div class="border-b border-gray-200 pb-4 mb-8">
+                    <h2 class="text-2xl font-bold text-gray-900">8. Preguntas frecuentes</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <details class="group">
+                            <summary class="flex justify-between items-center cursor-pointer">
+                                <span class="text-sm font-medium text-gray-900">¿Cómo restablezco mi contraseña?</span>
+                                <svg class="h-5 w-5 text-gray-500 group-open:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                                <svg class="h-5 w-5 text-gray-500 hidden group-open:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                                </svg>
+                            </summary>
+                            <p class="mt-3 text-xs text-gray-600">Visita la página de recuperación de contraseña e introduce tu email. Recibirás un enlace para crear una nueva contraseña segura.</p>
+                        </details>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <details class="group">
+                            <summary class="flex justify-between items-center cursor-pointer">
+                                <span class="text-sm font-medium text-gray-900">¿Cómo reporto contenido inapropiado?</span>
+                                <svg class="h-5 w-5 text-gray-500 group-open:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                            </summary>
+                            <p class="mt-3 text-xs text-gray-600">Usa el botón 'Reportar' disponible en todas las reseñas y comentarios. Nuestro equipo revisará el contenido en 24 horas.</p>
+                        </details>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <details class="group">
+                            <summary class="flex justify-between items-center cursor-pointer">
+                                <span class="text-sm font-medium text-gray-900">¿Hay aplicación móvil disponible?</span>
+                                <svg class="h-5 w-5 text-gray-500 group-open:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                            </summary>
+                            <p class="mt-3 text-xs text-gray-600">Actualmente ofrecemos una web responsive optimizada para móviles. La app nativa está en desarrollo.</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soporte Técnico -->
+            <div id="soporte" class="mb-16 scroll-mt-24">
+                <div class="border-b border-gray-200 pb-4 mb-8">
+                    <h2 class="text-2xl font-bold text-gray-900">9. Soporte Técnico</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-indigo-50 rounded-lg p-6">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Contactar con soporte</h3>
+                        <div class="space-y-4 text-xs">
+                            <div class="bg-white p-3 rounded-lg">
+                                <span class="font-medium block mb-1">📧 Email:</span>
+                                <span>soporte@gameshelf.com (Respuesta en 24h)</span>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg">
+                                <span class="font-medium block mb-1">📱 Chat en vivo:</span>
+                                <span>Disponible de 9:00 a 18:00 (GMT+1)</span>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg">
+                                <span class="font-medium block mb-1">📌 Sistema de tickets:</span>
+                                <span>Registra incidencias técnicas desde tu perfil</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Recursos útiles</h3>
+                        <ul class="space-y-3 text-xs">
+                            <li>
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 flex items-center">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                    Centro de ayuda completo
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 flex items-center">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                                    </svg>
+                                    Estado del servicio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-indigo-600 hover:text-indigo-800 flex items-center">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                    </svg>
+                                    Política de privacidad
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

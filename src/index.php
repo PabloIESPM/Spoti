@@ -59,13 +59,32 @@ $router->get('/cookies', function() {
     include_once DIRECTORIO_VISTAS . 'politicaCookies.php';
 });
 
-
 // Ayuda
 $router->get('/preguntas', function() {
     include_once DIRECTORIO_VISTAS . 'preguntasFrecuentes.php';
 });
 $router->get('/guiaUsuario', function() {
     include_once DIRECTORIO_VISTAS . 'guiaUsuario.php';
+});
+$router->get('/soporte', function() {
+    include_once DIRECTORIO_VISTAS . 'soporteTecnico.php';
+});
+$router->get('/denuncias', function() {
+    include_once DIRECTORIO_VISTAS . 'buzonDenuncias.php';
+});
+
+//Comunidad
+$router->get('/accesibilidad', function() {
+    include_once DIRECTORIO_VISTAS . 'accesibilidad.php';
+});
+$router->get('/verificacion', function() {
+    include_once DIRECTORIO_VISTAS . 'verificacion.php';
+});
+$router->get('/directrices', function() {
+    include_once DIRECTORIO_VISTAS . 'directrices.php';
+});
+$router->get('/trabajo', function() {
+    include_once DIRECTORIO_VISTAS . 'trabajo.php';
 });
 
 

@@ -77,10 +77,10 @@
                         <a href="/guiaUsuario" class="text-gray-600 text-sm font-normal hover:text-gray-900">Guía de usuario</a>
                     </li>
                     <li class="mb-6">
-                        <a href="javascript:;" class="text-gray-600 text-sm font-normal hover:text-gray-900">Soporte técnico</a>
+                        <a href="/soporte" class="text-gray-600 text-sm font-normal hover:text-gray-900">Soporte técnico</a>
                     </li>
                     <li>
-                        <a href="javascript:;" class="text-gray-600 text-sm font-normal hover:text-gray-900">Buzón de denuncias</a>
+                        <a href="/denuncias" class="text-gray-600 text-sm font-normal hover:text-gray-900">Buzón de denuncias</a>
                     </li>
                 </ul>
             </div>
@@ -89,16 +89,16 @@
                 <h4 class="text-lg text-gray-900 font-medium mb-7">Comunidad</h4>
                 <ul class="text-sm transition-all duration-500">
                     <li class="mb-6">
-                        <a href="javascript:;" class="text-gray-600 text-sm font-normal hover:text-gray-900">Accesibilidad</a>
+                        <a href="/accesibilidad" class="text-gray-600 text-sm font-normal hover:text-gray-900">Accesibilidad</a>
                     </li>
                     <li class="mb-6">
-                        <a href="javascript:;" class="text-gray-600 text-sm font-normal hover:text-gray-900">Verificación</a>
+                        <a href="/verificacion" class="text-gray-600 text-sm font-normal hover:text-gray-900">Verificación</a>
                     </li>
                     <li class="mb-6">
-                        <a href="javascript:;" class="text-gray-600 text-sm font-normal hover:text-gray-900">Directrices comunitarias</a>
+                        <a href="/directrices" class="text-gray-600 text-sm font-normal hover:text-gray-900">Directrices comunitarias</a>
                     </li>
                     <li>
-                        <a href="javascript:;" class="text-gray-600 text-sm font-normal hover:text-gray-900">Oportunidades de trabajo</a>
+                        <a href="/trabajo" class="text-gray-600 text-sm font-normal hover:text-gray-900">Oportunidades de trabajo</a>
                     </li>
                 </ul>
             </div>
