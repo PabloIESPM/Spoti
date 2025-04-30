@@ -8,6 +8,8 @@ use Phroute\Phroute\RouteCollector;
 use Phroute\Phroute\Exception\HttpRouteNotFoundException;
 $router = new RouteCollector();
 
+session_start();
+
 // MENU NAVEGACIÓN
 
 $router->get('/inicio', function() {
@@ -92,7 +94,7 @@ $router->get('/trabajo', function() {
 // OTROS
 
 $router->get('/', function (){
-    include_once DIRECTORIO_VISTAS . "errores.php";
+    include_once DIRECTORIO_VISTAS . "inicio.php";
 });
 
 $router->get('/user', [UserController::class, 'index']);

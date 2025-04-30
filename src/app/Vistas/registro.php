@@ -25,7 +25,7 @@ include_once DIRECTORIO_PLANTILLA . "header.php";
                 </p>
             </div>
             <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md px-4 py-2">
-                <form class="space-y-5" action="#" method="POST" enctype="multipart/form-data">
+                <form class="space-y-5" action="/user" method="POST" enctype="multipart/form-data">
                     <!-- Nombre -->
                     <div>
                         <label for="nombre" class="block text-sm font-medium text-gray-900">

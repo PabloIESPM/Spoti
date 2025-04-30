@@ -2,6 +2,9 @@
 
 namespace App\Controladores;
 
+use App\Modelos\UserModel;
+use Respect\Validation\Validator as v;
+
 class UserController
 {
     public function index(){
@@ -19,6 +22,24 @@ class UserController
         return "Esto es una vista edit";
     }
     public function store(){
+        var_dump($_POST);
+
+        // Filtrado datos
+        v::key('nombre', v::stringType())->assert($_POST);
+        v::key('primer_apellido', v::stringType())->assert($_POST);
+        v::key('segundo_apellido', v::stringType())->assert($_POST);
+        v::key('nick', v::stringType())->assert($_POST);
+        v::key('pais', v::stringType())->assert($_POST);
+        v::key('telefono', v::phone($_POST['pais']))->assert($_POST);
+        v::key('email', v::email())->assert($_POST);
+
+
+
+    $user=new User();
+
+    UserModel::saveUser($user);
+
+    $_SESSION['usuario']=$user->getNick();
         return "Esto es una vista store";
 
     }

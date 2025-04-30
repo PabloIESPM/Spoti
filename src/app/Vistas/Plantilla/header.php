@@ -238,14 +238,31 @@
                     </li>
                 </ul>
                 <!-- Inicio de sesion y registro-->
+
+                <?php
+
+                if (isset($_SESSION['usuario'])) {?>
+                    <div class="flex lg:items-center w-full justify-start flex-col lg:flex-row lg:w-max gap-5 lg:ml-14 lg:justify-end">
+                        <a href="/inicioSesion" class="bg-indigo-50 text-indigo-500 rounded-full cursor-pointer leading-6 font-medium text-center transition-all duration-500 py-2 px-5 text-sm hover:bg-indigo-100">
+                            Iniciar Sesión
+                        </a>
+                        <a href="/registro" class="bg-indigo-500 text-white rounded-full cursor-pointer leading-6 font-medium text-center shadow-xs transition-all duration-500 py-2 px-5 text-sm hover:bg-indigo-600">
+                            Registrarse
+                        </a>
+                    </div>
+                <?php
+                    }else{?>
                 <div class="flex lg:items-center w-full justify-start flex-col lg:flex-row lg:w-max gap-5 lg:ml-14 lg:justify-end">
-                    <a href="/inicioSesion" class="bg-indigo-50 text-indigo-500 rounded-full cursor-pointer leading-6 font-medium text-center transition-all duration-500 py-2 px-5 text-sm hover:bg-indigo-100">
-                        Iniciar Sesión
+                    <a href="" class="bg-indigo-50 text-indigo-500 rounded-full cursor-pointer leading-6 font-medium text-center transition-all duration-500 py-2 px-5 text-sm hover:bg-indigo-100">
+                        Foto del Usuario
                     </a>
                     <a href="/registro" class="bg-indigo-500 text-white rounded-full cursor-pointer leading-6 font-medium text-center shadow-xs transition-all duration-500 py-2 px-5 text-sm hover:bg-indigo-600">
-                        Registrarse
+                        Cerrar Sesión
                     </a>
                 </div>
+                <?php }
+                ?>
+
             </div>
         </div>
     </div>
