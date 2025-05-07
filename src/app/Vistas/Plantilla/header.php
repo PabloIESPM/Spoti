@@ -41,9 +41,22 @@
                     <li>
                         <a href="/calendario" class="nav-link block lg:px-2 lg:text-left text-gray-900 text-base font-medium transition-all duration-500 hover:text-gray-500">Calendario</a>
                     </li>
-                    <li class="relative">
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" class="px-4 py-2 text-gray-700 hover:text-blue-500 transition">
+                            Comunidad
+                        </button>
                         <!-- Dropdown menu -->
-                        <div id="menu1" aria-labelledby="menu1" class="animate-fade z-10 relative top-3 max-lg:mb-3 lg:absolute lg:top-14 lg:-left-80 bg-white rounded-lg shadow-lg max-lg:shadow-inner shadow-gray-200 xl:p-8 lg:p-4 p-2 lg:min-w-[800px] md:min-w-[500px] min-w-full hidden">
+                        <div id="menu1"
+                             x-show="open"
+                             @click.away="open = false"
+                             x-transition:enter="transition ease-out duration-200"
+                             x-transition:enter-start="opacity-0 translate-y-1"
+                             x-transition:enter-end="opacity-100 translate-y-0"
+                             x-transition:leave="transition ease-in duration-150"
+                             x-transition:leave-start="opacity-100 translate-y-0"
+                             x-transition:leave-end="opacity-0 translate-y-1"
+                             aria-labelledby="menu1"
+                             aria-labelledby="menu1" class="animate-fade z-10 relative top-3 max-lg:mb-3 lg:absolute lg:top-14 lg:-left-80 bg-white rounded-lg shadow-lg max-lg:shadow-inner shadow-gray-200 xl:p-8 lg:p-4 p-2 lg:min-w-[800px] md:min-w-[500px] min-w-full hidden">
                             <div class="flex flex-col md:flex-row justify-between">
                                 <ul class="text-sm text-gray-700 md:w-1/2" aria-labelledby="dropdownLargeButton">
                                     <h6 class="font-medium text-sm text-gray-500 mb-2">
@@ -202,40 +215,42 @@
                             </div>
                         </div>
                     </li>
-                    <li class="relative">
-                        <button data-target="menu2" class="dropdown-toggle flex items-center justify-between text-gray-900 text-center text-base font-medium transition-all duration-500 lg:px-2 mr-auto lg:text-left lg:m-0 hover:text-gray-500">
+                    <li class="relative" x-data="{ open: false }">
+                        <!-- Botón desplegable -->
+                        <button
+                                @click="open = !open"
+                                class="dropdown-toggle flex items-center justify-between text-gray-900 text-center text-base font-medium transition-all duration-500 lg:px-2 mr-auto lg:text-left lg:m-0 hover:text-gray-500"
+                        >
                             Comunidad
                             <svg class="w-3 h-2 ml-1.5" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 1L3.58579 3.58579C4.25245 4.25245 4.58579 4.58579 5 4.58579C5.41421 4.58579 5.74755 4.25245 6.41421 3.58579L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M1 1L3.58579 3.58579C4.25245 4.25245 4.58579 4.58579 5 4.58579C5.41421 4.58579 5.74755 4.25245 6.41421 3.58579L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </button>
-                        <!-- Menu Hamburguesa -->
-                        <div id="menu2" aria-labelledby="menu2" class="dropdown-menu z-10 relative top-3 max-lg:mb-3 lg:absolute lg:top-14 font-normal bg-white rounded-lg shadow-md shadow-gray-200 w-64 xl:p-8 lg:p-4 p-2 hidden">
+
+                        <!-- Menú desplegable -->
+                        <div
+                                x-show="open"
+                                @click.away="open = false"
+                                x-transition:enter="transition ease-out duration-200"
+                                x-transition:enter-start="opacity-0 translate-y-1"
+                                x-transition:enter-end="opacity-100 translate-y-0"
+                                x-transition:leave="transition ease-in duration-150"
+                                x-transition:leave-start="opacity-100 translate-y-0"
+                                x-transition:leave-end="opacity-0 translate-y-1"
+                                class="z-10 relative top-3 max-lg:mb-3 lg:absolute lg:top-14 font-normal bg-white rounded-lg shadow-md shadow-gray-200 w-64 xl:p-8 lg:p-4 p-2"
+                        >
                             <ul class="text-sm text-gray-700" aria-labelledby="dropdownLargeButton">
-                                <h6 class="text-sm text-gray-500 font-medium mb-2">
-                                    Funcionalidades
-                                </h6>
-                                <li>
-                                    <a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Notificaciones</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Analítica</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Integraciones</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Seguridad</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Documentación</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Soporte</a>
-                                </li>
+                                <h6 class="text-sm text-gray-500 font-medium mb-2">Funcionalidades</h6>
+                                <li><a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Notificaciones</a></li>
+                                <li><a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Analítica</a></li>
+                                <li><a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Integraciones</a></li>
+                                <li><a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Seguridad</a></li>
+                                <li><a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Documentación</a></li>
+                                <li><a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Soporte</a></li>
                             </ul>
                         </div>
                     </li>
+
                 </ul>
                 <!-- Inicio de sesion y registro-->
 
@@ -262,7 +277,6 @@
                 </div>
                 <?php }
                 ?>
-
             </div>
         </div>
     </div>
