@@ -108,6 +108,10 @@ $router->put('/user/{id}', [UserController::class, 'update']);
 $router->patch('/user/{id}', [UserController::class, 'update']);
 $router->delete('/user/{id}', [UserController::class, 'destroy']);
 
+//Videojuegos
+
+//$router->get('/videojuego/inicializar',VideogameController::class,'inicializar');
+
 
 
 $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());

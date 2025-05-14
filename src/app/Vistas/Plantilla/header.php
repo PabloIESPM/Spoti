@@ -240,13 +240,12 @@
                                 class="z-10 relative top-3 max-lg:mb-3 lg:absolute lg:top-14 font-normal bg-white rounded-lg shadow-md shadow-gray-200 w-64 xl:p-8 lg:p-4 p-2"
                         >
                             <ul class="text-sm text-gray-700" aria-labelledby="dropdownLargeButton">
-                                <h6 class="text-sm text-gray-500 font-medium mb-2">Funcionalidades</h6>
-                                <li><a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Notificaciones</a></li>
-                                <li><a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Analítica</a></li>
-                                <li><a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Integraciones</a></li>
-                                <li><a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Seguridad</a></li>
-                                <li><a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Documentación</a></li>
-                                <li><a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Soporte</a></li>
+                                <h6 class="text-sm text-gray-500 font-medium mb-2"></h6>
+                                <li><a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Noticias</a></li>
+                                <li><a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Eventos</a></li>
+                                <li><a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Premios y Nominaciones</a></li>
+                                <li><a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Criticas</a></li>
+                                <li><a href="javascript:;" class="block py-3 hover:text-prime-blue-700 text-base text-gray-900 font-semibold transition-all duration-500">Rankins</a></li>
                             </ul>
                         </div>
                     </li>
