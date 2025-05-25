@@ -108,7 +108,7 @@ $router->put('/user/{id}', [UserController::class, 'update']);
 $router->patch('/user/{id}', [UserController::class, 'update']);
 $router->delete('/user/{id}', [UserController::class, 'destroy']);
 
-// Crear router para Videojuegos
+//Videojuegos
 
 //$router->get('/videojuego/inicializar',VideogameController::class,'inicializar');
 

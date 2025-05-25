@@ -18,9 +18,7 @@ class VideogameModel
             // Set PDO to throw exceptions on error
             $db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         } catch (\PDOException $e) {
-            echo "Error de conexión: " . $e->getMessage();
-            // Optionally, you might want to exit or log the error
-            // exit; 
+            error_log("Error de conexión: " . $e->getMessage());
         }
 
         //Recorrer el array para cada uno de los videojuegos
@@ -33,12 +31,9 @@ class VideogameModel
                 $stmt->bindParam(':anio_lanzamiento', $videojuego['anio_lanzamiento']);
                 $stmt->execute();
             } catch (\PDOException $e) {
-                echo "Error al insertar videojuego: " . $e->getMessage();
-                // Optionally, you might want to log the error or handle it differently
+                error_log("Error al insertar videojuego '" . $videojuego['nombre'] . "': " . $e->getMessage());
             }
         }
-
-        //Insertar cada uno de los videojuegos en la base de datos
 
 
 
