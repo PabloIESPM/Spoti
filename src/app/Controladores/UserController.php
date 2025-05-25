@@ -2,6 +2,7 @@
 
 namespace App\Controladores;
 
+use App\Clases\User; // Added this line
 use App\Modelos\UserModel;
 use App\Vistas\View;
 use Respect\Validation\Validator as v;
@@ -29,10 +30,11 @@ class UserController
         v::key('pais', v::stringType())->assert($_POST);
         v::key('telefono', v::phone($_POST['pais']))->assert($_POST);
         v::key('email', v::email())->assert($_POST);
+        v::key('password', v::stringType()->length(8, null))->assert($_POST);
 
+        $passwordHash = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-
-    $user=new User();
+    $user = new User($_POST['nombre'], $_POST['primer_apellido'], $_POST['segundo_apellido'], $_POST['nick'], $_POST['pais'], $_POST['telefono'], $_POST['email'], $passwordHash);
 
     UserModel::saveUser($user);
 
