@@ -3,6 +3,7 @@
 namespace App\Controladores;
 
 use App\Modelos\UserModel;
+use App\Vistas\View;
 use Respect\Validation\Validator as v;
 
 class UserController
@@ -11,12 +12,8 @@ class UserController
         return "Estoy es una vista index";
     }
     public function show($id){
-
-        //Hacer una llamada al modelo para conseguir los datos del usuario
-        //$usuario;
-        //View::mostrar_vista("mostrarDatsosUsuario.php",$usuario);
-
-        include_once DIRECTORIO_VISTAS . "mostrarDatsosUsuario.php";
+        $usuario = UserModel::getUserById($id);
+        View::mostrar_vista("mostrarDatsosUsuario.php", ['usuario' => $usuario]);
     }
     public function edit(){
         return "Esto es una vista edit";
