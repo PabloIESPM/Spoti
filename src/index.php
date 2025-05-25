@@ -4,6 +4,7 @@ include_once "vendor/autoload.php";
 include_once "env.php";
 
 use App\Controladores\UserController;
+use App\Controladores\VideogameController;
 use Phroute\Phroute\RouteCollector;
 use Phroute\Phroute\Exception\HttpRouteNotFoundException;
 $router = new RouteCollector();
@@ -110,7 +111,7 @@ $router->delete('/user/{id}', [UserController::class, 'destroy']);
 
 //Videojuegos
 
-//$router->get('/videojuego/inicializar',VideogameController::class,'inicializar');
+$router->get('/videojuego/inicializar', [VideogameController::class, 'inicializar']);
 
 
 
