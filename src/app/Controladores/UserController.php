@@ -32,14 +32,21 @@ class UserController
         v::key('email', v::email())->assert($_POST);
         v::key('password', v::stringType()->length(8, null))->assert($_POST);
 
+        if ($_POST['password'] !== $_POST['password_confirmation']) {
+            throw new \Exception("Las contraseñas no coinciden.");
+        }
+
         $passwordHash = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
     $user = new User($_POST['nombre'], $_POST['primer_apellido'], $_POST['segundo_apellido'], $_POST['nick'], $_POST['pais'], $_POST['telefono'], $_POST['email'], $passwordHash);
 
-    UserModel::saveUser($user);
-
-    $_SESSION['usuario']=$user->getNick();
-        return "Esto es una vista store";
+    if (UserModel::saveUser($user)) {
+        $_SESSION['usuario'] = $user->getNick();
+        header('Location: /inicioSesion');
+        exit;
+    } else {
+        return "Error al registrar al usuario. Por favor, inténtelo de nuevo.";
+    }
 
     }
     public function update(){
