@@ -101,10 +101,12 @@ $router->get('/', function (){
     include_once DIRECTORIO_VISTAS . "inicio.php";
 });
 
+$router->get('/logout', [UserController::class, 'logout']); // Added this line
 $router->get('/user', [UserController::class, 'index']);
 $router->get('/user/{id}', [UserController::class, 'show']);
 $router->get('/user/{id}/edit', [UserController::class, 'edit']);
 $router->post('/user', [UserController::class, 'store']);
+$router->post('/login', [UserController::class, 'handleLogin']);
 $router->put('/user/{id}', [UserController::class, 'update']);
 $router->patch('/user/{id}', [UserController::class, 'update']);
 $router->delete('/user/{id}', [UserController::class, 'destroy']);

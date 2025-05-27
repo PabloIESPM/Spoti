@@ -55,4 +55,49 @@ class UserController
     public function destroy(){
         return "Esto es una vista delete";
     }
+
+    public function handleLogin()
+    {
+        try {
+            v::key('email', v::email())->assert($_POST);
+            v::key('password', v::stringType()->notEmpty())->assert($_POST);
+
+            $user = UserModel::findByEmail($_POST['email']);
+
+            if ($user && password_verify($_POST['password'], $user['password_hash'])) {
+                session_regenerate_id(true);
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['usuario'] = $user['nick'];
+                $_SESSION['foto_usuario'] = $user['foto_usuario'] ?: '/storage/default-avatar.png'; // Default avatar
+                
+                header('Location: /inicio');
+                exit;
+            } else {
+                $errorMessage = "Correo electrónico o contraseña incorrectos.";
+                View::mostrar_vista('inicioSesion.php', ['error' => $errorMessage]);
+            }
+        } catch (\Respect\Validation\Exceptions\ValidationException $e) {
+            // For simplicity, using a generic error message for validation failures
+            // In a real app, you might want to pass specific error messages from $e->getMessages()
+            $errorMessage = "Datos de inicio de sesión inválidos. Por favor, revise los campos.";
+            View::mostrar_vista('inicioSesion.php', ['error' => $errorMessage]);
+        }
+    }
+
+    public function logout()
+    {
+        $_SESSION = array();
+        session_destroy();
+
+        if (ini_get("session.use_cookies")) {
+            $params = session_get_cookie_params();
+            setcookie(session_name(), '', time() - 42000,
+                $params["path"], $params["domain"],
+                $params["secure"], $params["httponly"]
+            );
+        }
+
+        header('Location: /inicioSesion');
+        exit;
+    }
 }

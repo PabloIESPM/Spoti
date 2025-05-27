@@ -62,4 +62,29 @@ class UserModel
             return null; // Or handle error as appropriate
         }
     }
+
+    public static function findByEmail(string $email)
+    {
+        $host = 'localhost';
+        $dbname = 'videojuegos_db';
+        $user = 'root';
+        $password = '';
+
+        try {
+            $db = new \PDO("mysql:host=$host;dbname=$dbname", $user, $password);
+            $db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+
+            $stmt = $db->prepare("SELECT id, nick, email, password_hash, foto_usuario FROM users WHERE email = :email");
+            $stmt->bindParam(':email', $email, \PDO::PARAM_STR);
+            $stmt->execute();
+
+            $userData = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+            return $userData ?: null;
+
+        } catch (\PDOException $e) {
+            error_log("Error al obtener usuario por email: " . $e->getMessage());
+            return null;
+        }
+    }
 }
