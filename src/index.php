@@ -11,9 +11,6 @@ $router = new RouteCollector();
 
 session_start();
 
-$_SESSION['usuario']="Veronica";
-$_SESSION['foto_usuario']="/storage/veronica.png";
-
 // MENU NAVEGACIÓN
 
 $router->get('/inicio', function() {

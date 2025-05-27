@@ -20,20 +20,42 @@ class UserController
         return "Esto es una vista edit";
     }
     public function store(){
-        var_dump($_POST);
 
         // Filtrado datos
-        v::key('nombre', v::stringType())->assert($_POST);
-        v::key('primer_apellido', v::stringType())->assert($_POST);
-        v::key('segundo_apellido', v::stringType())->assert($_POST);
-        v::key('nick', v::stringType())->assert($_POST);
-        v::key('pais', v::stringType())->assert($_POST);
-        v::key('telefono', v::phone($_POST['pais']))->assert($_POST);
-        v::key('email', v::email())->assert($_POST);
-        v::key('password', v::stringType()->length(8, null))->assert($_POST);
+        try {
+            v::key('nombre', v::stringType())->assert($_POST);
+            v::key('primer_apellido', v::stringType())->assert($_POST);
+            v::key('segundo_apellido', v::stringType())->assert($_POST);
+            v::key('nick', v::stringType())->assert($_POST);
+            v::key('pais', v::stringType())->assert($_POST);
+            v::key('telefono', v::phone($_POST['pais']))->assert($_POST);
+            $_POST['email'] = strtolower($_POST['email']);
+            v::key('email', v::email())->assert($_POST);
+            v::key('password', v::stringType()->length(8, null))->assert($_POST);
+        } catch (\Respect\Validation\Exceptions\ValidationException $e) {
+            $errorMessage = "Por favor, corrija los errores del formulario. Verifique todos los campos.";
+            View::mostrar_vista('registro.php', ['error' => $errorMessage, 'old_data' => $_POST]);
+            return;
+        }
 
         if ($_POST['password'] !== $_POST['password_confirmation']) {
-            throw new \Exception("Las contraseñas no coinciden.");
+            $errorMessage = "Las contraseñas no coinciden.";
+            View::mostrar_vista('registro.php', ['error' => $errorMessage, 'old_data' => $_POST]);
+            return;
+        }
+
+        // Duplicate Email Check
+        if (UserModel::emailExists($_POST['email'])) {
+            $errorMessage = "Este correo electrónico ya está registrado.";
+            View::mostrar_vista('registro.php', ['error' => $errorMessage, 'old_data' => $_POST]);
+            return;
+        }
+
+        // Duplicate Nickname Check
+        if (UserModel::nickExists($_POST['nick'])) {
+            $errorMessage = "Este nombre de usuario ya está en uso.";
+            View::mostrar_vista('registro.php', ['error' => $errorMessage, 'old_data' => $_POST]);
+            return;
         }
 
         $passwordHash = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -45,7 +67,9 @@ class UserController
         header('Location: /inicioSesion');
         exit;
     } else {
-        return "Error al registrar al usuario. Por favor, inténtelo de nuevo.";
+        $errorMessage = "Error al registrar al usuario. Hubo un problema al guardar los datos, por favor, inténtelo de nuevo.";
+        View::mostrar_vista('registro.php', ['error' => $errorMessage, 'old_data' => $_POST]);
+        return;
     }
 
     }
@@ -59,6 +83,7 @@ class UserController
     public function handleLogin()
     {
         try {
+            $_POST['email'] = strtolower($_POST['email']);
             v::key('email', v::email())->assert($_POST);
             v::key('password', v::stringType()->notEmpty())->assert($_POST);
 

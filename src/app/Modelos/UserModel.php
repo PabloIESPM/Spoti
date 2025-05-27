@@ -87,4 +87,50 @@ class UserModel
             return null;
         }
     }
+
+    public static function emailExists(string $email): bool
+    {
+        $host = 'localhost';
+        $dbname = 'videojuegos_db';
+        $user = 'root';
+        $password = '';
+
+        try {
+            $db = new \PDO("mysql:host=$host;dbname=$dbname", $user, $password);
+            $db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+
+            $stmt = $db->prepare("SELECT COUNT(*) FROM users WHERE email = :email");
+            $stmt->bindParam(':email', $email, \PDO::PARAM_STR);
+            $stmt->execute();
+
+            return $stmt->fetchColumn() > 0;
+
+        } catch (\PDOException $e) {
+            error_log("Error al verificar email: " . $e->getMessage());
+            return false; // Return false on DB error as specified
+        }
+    }
+
+    public static function nickExists(string $nick): bool
+    {
+        $host = 'localhost';
+        $dbname = 'videojuegos_db';
+        $user = 'root';
+        $password = '';
+
+        try {
+            $db = new \PDO("mysql:host=$host;dbname=$dbname", $user, $password);
+            $db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+
+            $stmt = $db->prepare("SELECT COUNT(*) FROM users WHERE nick = :nick");
+            $stmt->bindParam(':nick', $nick, \PDO::PARAM_STR);
+            $stmt->execute();
+
+            return $stmt->fetchColumn() > 0;
+
+        } catch (\PDOException $e) {
+            error_log("Error al verificar nick: " . $e->getMessage());
+            return false; // Return false on DB error as specified
+        }
+    }
 }
