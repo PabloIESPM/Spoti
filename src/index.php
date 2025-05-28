@@ -4,14 +4,12 @@ include_once "vendor/autoload.php";
 include_once "env.php";
 
 use App\Controladores\UserController;
+use App\Controladores\VideogameController;
 use Phroute\Phroute\RouteCollector;
 use Phroute\Phroute\Exception\HttpRouteNotFoundException;
 $router = new RouteCollector();
 
 session_start();
-
-$_SESSION['usuario']="Veronica";
-$_SESSION['foto_usuario']="/storage/veronica.png";
 
 // MENU NAVEGACIÓN
 
@@ -100,17 +98,19 @@ $router->get('/', function (){
     include_once DIRECTORIO_VISTAS . "inicio.php";
 });
 
+$router->get('/logout', [UserController::class, 'logout']); // Added this line
 $router->get('/user', [UserController::class, 'index']);
 $router->get('/user/{id}', [UserController::class, 'show']);
 $router->get('/user/{id}/edit', [UserController::class, 'edit']);
 $router->post('/user', [UserController::class, 'store']);
+$router->post('/login', [UserController::class, 'handleLogin']);
 $router->put('/user/{id}', [UserController::class, 'update']);
 $router->patch('/user/{id}', [UserController::class, 'update']);
 $router->delete('/user/{id}', [UserController::class, 'destroy']);
 
-// Crear router para Videojuegos
+//Videojuegos
 
-//$router->get('/videojuego/inicializar',VideogameController::class,'inicializar');
+$router->get('/videojuego/inicializar', [VideogameController::class, 'inicializar']);
 
 
 

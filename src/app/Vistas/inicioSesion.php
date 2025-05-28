@@ -20,9 +20,12 @@ include_once DIRECTORIO_PLANTILLA . "header.php";
                     <h2 class="mt-10 text-center text-2xl font-bold tracking-tight text-gray-900">
                         Inicia sesión en tu cuenta
                     </h2>
+                    <?php if (isset($error) && !empty($error)): ?>
+                        <p style="color: red; text-align: center; margin-top: 10px;"><?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?></p>
+                    <?php endif; ?>
                 </div>
                 <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                    <form class="space-y-6" action="#" method="POST">
+                    <form class="space-y-6" action="/login" method="POST">
                         <div>
                             <label for="email" class="block text-sm font-medium text-gray-900">
                                 Correo electrónico

@@ -20,6 +20,9 @@ include_once DIRECTORIO_PLANTILLA . "header.php";
                 <h2 class="mt-10 text-center text-2xl font-bold tracking-tight text-gray-900">
                     Crear nueva cuenta
                 </h2>
+                <?php if (isset($error) && !empty($error)): ?>
+                    <p style="color: red; text-align: center; margin-top: 10px;"><?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?></p>
+                <?php endif; ?>
                 <p class="mt-2 text-center text-sm text-gray-600">
                     Completa tus datos para registrarte
                 </p>
@@ -33,6 +36,7 @@ include_once DIRECTORIO_PLANTILLA . "header.php";
                         </label>
                         <div class="mt-1">
                             <input type="text" name="nombre" id="nombre" autocomplete="given-name" required
+                                   value="<?php echo htmlspecialchars($old_data['nombre'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600 sm:text-sm">
                         </div>
                     </div>
@@ -43,6 +47,7 @@ include_once DIRECTORIO_PLANTILLA . "header.php";
                         </label>
                         <div class="mt-1">
                             <input type="text" name="primer_apellido" id="primer_apellido" autocomplete="family-name" required
+                                   value="<?php echo htmlspecialchars($old_data['primer_apellido'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600 sm:text-sm">
                         </div>
                     </div>
@@ -53,6 +58,7 @@ include_once DIRECTORIO_PLANTILLA . "header.php";
                         </label>
                         <div class="mt-1">
                             <input type="text" name="segundo_apellido" id="segundo_apellido" autocomplete="family-name"
+                                   value="<?php echo htmlspecialchars($old_data['segundo_apellido'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600 sm:text-sm">
                         </div>
                     </div>
@@ -64,6 +70,7 @@ include_once DIRECTORIO_PLANTILLA . "header.php";
                         </label>
                         <div class="mt-1">
                             <input type="text" name="nick" id="nick" autocomplete="username" required
+                                   value="<?php echo htmlspecialchars($old_data['nick'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600 sm:text-sm">
                         </div>
                     </div>
@@ -77,36 +84,48 @@ include_once DIRECTORIO_PLANTILLA . "header.php";
                             <select id="pais" name="pais" required
                                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600 sm:text-sm">
                                 <option value="">Selecciona un país</option>
-                                <option value="ES">España</option>
-                                <option value="AR">Argentina</option>
-                                <option value="BO">Bolivia</option>
-                                <option value="CL">Chile</option>
-                                <option value="CO">Colombia</option>
-                                <option value="CR">Costa Rica</option>
-                                <option value="CU">Cuba</option>
-                                <option value="DO">República Dominicana</option>
-                                <option value="EC">Ecuador</option>
-                                <option value="SV">El Salvador</option>
-                                <option value="GT">Guatemala</option>
-                                <option value="HN">Honduras</option>
-                                <option value="MX">México</option>
-                                <option value="NI">Nicaragua</option>
-                                <option value="PA">Panamá</option>
-                                <option value="PY">Paraguay</option>
-                                <option value="PE">Perú</option>
-                                <option value="PR">Puerto Rico</option>
-                                <option value="UY">Uruguay</option>
-                                <option value="VE">Venezuela</option>
-                                <option value="US">Estados Unidos</option>
-                                <option value="CA">Canadá</option>
-                                <option value="PT">Portugal</option>
-                                <option value="BR">Brasil</option>
-                                <option value="FR">Francia</option>
-                                <option value="IT">Italia</option>
-                                <option value="DE">Alemania</option>
-                                <option value="GB">Reino Unido</option>
-                                <option value="OT">Otros países</option>
+                                <option value="ES" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'ES') ? 'selected' : ''; ?>>España</option>
+                                <option value="AR" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'AR') ? 'selected' : ''; ?>>Argentina</option>
+                                <option value="BO" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'BO') ? 'selected' : ''; ?>>Bolivia</option>
+                                <option value="CL" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'CL') ? 'selected' : ''; ?>>Chile</option>
+                                <option value="CO" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'CO') ? 'selected' : ''; ?>>Colombia</option>
+                                <option value="CR" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'CR') ? 'selected' : ''; ?>>Costa Rica</option>
+                                <option value="CU" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'CU') ? 'selected' : ''; ?>>Cuba</option>
+                                <option value="DO" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'DO') ? 'selected' : ''; ?>>República Dominicana</option>
+                                <option value="EC" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'EC') ? 'selected' : ''; ?>>Ecuador</option>
+                                <option value="SV" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'SV') ? 'selected' : ''; ?>>El Salvador</option>
+                                <option value="GT" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'GT') ? 'selected' : ''; ?>>Guatemala</option>
+                                <option value="HN" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'HN') ? 'selected' : ''; ?>>Honduras</option>
+                                <option value="MX" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'MX') ? 'selected' : ''; ?>>México</option>
+                                <option value="NI" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'NI') ? 'selected' : ''; ?>>Nicaragua</option>
+                                <option value="PA" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'PA') ? 'selected' : ''; ?>>Panamá</option>
+                                <option value="PY" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'PY') ? 'selected' : ''; ?>>Paraguay</option>
+                                <option value="PE" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'PE') ? 'selected' : ''; ?>>Perú</option>
+                                <option value="PR" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'PR') ? 'selected' : ''; ?>>Puerto Rico</option>
+                                <option value="UY" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'UY') ? 'selected' : ''; ?>>Uruguay</option>
+                                <option value="VE" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'VE') ? 'selected' : ''; ?>>Venezuela</option>
+                                <option value="US" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'US') ? 'selected' : ''; ?>>Estados Unidos</option>
+                                <option value="CA" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'CA') ? 'selected' : ''; ?>>Canadá</option>
+                                <option value="PT" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'PT') ? 'selected' : ''; ?>>Portugal</option>
+                                <option value="BR" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'BR') ? 'selected' : ''; ?>>Brasil</option>
+                                <option value="FR" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'FR') ? 'selected' : ''; ?>>Francia</option>
+                                <option value="IT" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'IT') ? 'selected' : ''; ?>>Italia</option>
+                                <option value="DE" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'DE') ? 'selected' : ''; ?>>Alemania</option>
+                                <option value="GB" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'GB') ? 'selected' : ''; ?>>Reino Unido</option>
+                                <option value="OT" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'OT') ? 'selected' : ''; ?>>Otros países</option>
                             </select>
+                        </div>
+                    </div>
+
+                    <!-- Teléfono -->
+                    <div>
+                        <label for="telefono" class="block text-sm font-medium text-gray-900">
+                            Teléfono
+                        </label>
+                        <div class="mt-1">
+                            <input type="tel" name="telefono" id="telefono" required
+                                   value="<?php echo htmlspecialchars($old_data['telefono'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
+                                   class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600 sm:text-sm">
                         </div>
                     </div>
 
@@ -117,6 +136,7 @@ include_once DIRECTORIO_PLANTILLA . "header.php";
                         </label>
                         <div class="mt-1">
                             <input type="email" name="email" id="email" autocomplete="email" required
+                                   value="<?php echo htmlspecialchars($old_data['email'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600 sm:text-sm">
                         </div>
                     </div>
@@ -151,6 +171,7 @@ include_once DIRECTORIO_PLANTILLA . "header.php";
                         </label>
                         <div class="mt-1">
                             <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" required
+                                   value="<?php echo htmlspecialchars($old_data['fecha_nacimiento'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600 sm:text-sm">
                         </div>
                     </div>
@@ -162,15 +183,15 @@ include_once DIRECTORIO_PLANTILLA . "header.php";
                         </label>
                         <div class="mt-2 flex gap-4">
                             <div class="flex items-center">
-                                <input id="hombre" name="sexo" type="radio" value="hombre" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                <input id="hombre" name="sexo" type="radio" value="hombre" <?php echo (isset($old_data['sexo']) && $old_data['sexo'] === 'hombre') ? 'checked' : ''; ?> class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                 <label for="hombre" class="ml-2 block text-sm text-gray-900">Hombre</label>
                             </div>
                             <div class="flex items-center">
-                                <input id="mujer" name="sexo" type="radio" value="mujer" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                <input id="mujer" name="sexo" type="radio" value="mujer" <?php echo (isset($old_data['sexo']) && $old_data['sexo'] === 'mujer') ? 'checked' : ''; ?> class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                 <label for="mujer" class="ml-2 block text-sm text-gray-900">Mujer</label>
                             </div>
                             <div class="flex items-center">
-                                <input id="no_especificar" name="sexo" type="radio" value="no_especificar" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                <input id="no_especificar" name="sexo" type="radio" value="no_especificar" <?php echo (isset($old_data['sexo']) && $old_data['sexo'] === 'no_especificar') ? 'checked' : ''; ?> class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
                                 <label for="no_especificar" class="ml-2 block text-sm text-gray-900">Prefiero no decirlo</label>
                             </div>
                         </div>
@@ -197,7 +218,7 @@ include_once DIRECTORIO_PLANTILLA . "header.php";
                     <!-- Condiciones de servicio -->
                     <div class="flex items-start">
                         <div class="flex items-center h-5">
-                            <input id="terms" name="terms" type="checkbox" required
+                            <input id="terms" name="terms" type="checkbox" required <?php echo (isset($old_data['terms'])) ? 'checked' : ''; ?>
                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                         </div>
                         <div class="ml-3 text-sm">
