@@ -1,60 +1,83 @@
-<?php return array (
-  'root' => 
-  array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
-    'aliases' => 
-    array (
+<?php return array(
+    'root' => array(
+        'name' => '__root__',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => null,
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
     ),
-    'reference' => NULL,
-    'name' => '__root__',
-  ),
-  'versions' => 
-  array (
-    '__root__' => 
-    array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => NULL,
+    'versions' => array(
+        '__root__' => array(
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => null,
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'giggsey/libphonenumber-for-php' => array(
+            'pretty_version' => '9.0.5',
+            'version' => '9.0.5.0',
+            'reference' => '8c2c1d63c55ce1100701b7a9e760e21421d21453',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../giggsey/libphonenumber-for-php',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'giggsey/libphonenumber-for-php-lite' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => '9.0.5',
+            ),
+        ),
+        'giggsey/locale' => array(
+            'pretty_version' => '2.8.0',
+            'version' => '2.8.0.0',
+            'reference' => '1cd8b3ad2d43e04f4c2c6a240495af44780f809b',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../giggsey/locale',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'phroute/phroute' => array(
+            'pretty_version' => 'v2.2.0',
+            'version' => '2.2.0.0',
+            'reference' => 'c1893b885966a0c7b50b9239dd867fda7a312dfa',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phroute/phroute',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'respect/stringifier' => array(
+            'pretty_version' => '0.2.0',
+            'version' => '0.2.0.0',
+            'reference' => 'e55af3c8aeaeaa2abb5fa47a58a8e9688cc23b59',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../respect/stringifier',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'respect/validation' => array(
+            'pretty_version' => '2.4.1',
+            'version' => '2.4.1.0',
+            'reference' => 'd1575eb4dde7b06f8dbc5e8d84dffb87931a40bd',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../respect/validation',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/polyfill-mbstring' => array(
+            'pretty_version' => 'v1.31.0',
+            'version' => '1.31.0.0',
+            'reference' => '85181ba99b2345b0ef10ce42ecac37612d9fd341',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/polyfill-mbstring',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
     ),
-    'phroute/phroute' => 
-    array (
-      'pretty_version' => 'v2.2.0',
-      'version' => '2.2.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'c1893b885966a0c7b50b9239dd867fda7a312dfa',
-    ),
-    'respect/stringifier' => 
-    array (
-      'pretty_version' => '0.2.0',
-      'version' => '0.2.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'e55af3c8aeaeaa2abb5fa47a58a8e9688cc23b59',
-    ),
-    'respect/validation' => 
-    array (
-      'pretty_version' => '2.4.1',
-      'version' => '2.4.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'd1575eb4dde7b06f8dbc5e8d84dffb87931a40bd',
-    ),
-    'symfony/polyfill-mbstring' => 
-    array (
-      'pretty_version' => 'v1.31.0',
-      'version' => '1.31.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '85181ba99b2345b0ef10ce42ecac37612d9fd341',
-    ),
-  ),
 );
