@@ -5,7 +5,6 @@ create table user
     apellido_uno     varchar(255)                               null,
     apellido_dos     varchar(255)                               null,
     nick_name        varchar(255)                               null,
-    pais             varchar(255)                               null,
     email            varchar(255)                               null,
     contraseña       varchar(255)                               null,
     fecha_nacimiento date                                       null,

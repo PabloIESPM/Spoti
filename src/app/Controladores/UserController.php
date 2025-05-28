@@ -28,7 +28,6 @@ class UserController
             v::key('segundo_apellido', v::stringType())->assert($_POST);
             v::key('nick', v::stringType())->assert($_POST);
             v::key('pais', v::stringType())->assert($_POST);
-            v::key('telefono', v::phone($_POST['pais']))->assert($_POST);
             $_POST['email'] = strtolower($_POST['email']);
             v::key('email', v::email())->assert($_POST);
             v::key('password', v::stringType()->length(8, null))->assert($_POST);

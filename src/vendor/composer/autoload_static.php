@@ -7,11 +7,15 @@ namespace Composer\Autoload;
 class ComposerStaticInit7c656fcfc06ed5b1a597445e9c5da3bd
 {
     public static $files = array (
-        '2df68f9e79c919e2d88506611769ed2e' => __DIR__ . '/..' . '/respect/stringifier/src/stringify.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '2df68f9e79c919e2d88506611769ed2e' => __DIR__ . '/..' . '/respect/stringifier/src/stringify.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        'l' => 
+        array (
+            'libphonenumber\\' => 15,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
@@ -25,6 +29,10 @@ class ComposerStaticInit7c656fcfc06ed5b1a597445e9c5da3bd
         array (
             'Phroute\\Phroute\\' => 16,
         ),
+        'G' => 
+        array (
+            'Giggsey\\Locale\\' => 15,
+        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -32,6 +40,10 @@ class ComposerStaticInit7c656fcfc06ed5b1a597445e9c5da3bd
     );
 
     public static $prefixDirsPsr4 = array (
+        'libphonenumber\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/giggsey/libphonenumber-for-php/src',
+        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
@@ -47,6 +59,10 @@ class ComposerStaticInit7c656fcfc06ed5b1a597445e9c5da3bd
         'Phroute\\Phroute\\' => 
         array (
             0 => __DIR__ . '/..' . '/phroute/phroute/src/Phroute',
+        ),
+        'Giggsey\\Locale\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/giggsey/locale/src',
         ),
         'App\\' => 
         array (

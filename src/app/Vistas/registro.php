@@ -75,60 +75,6 @@ include_once DIRECTORIO_PLANTILLA . "header.php";
                         </div>
                     </div>
 
-                    <!-- País -->
-                    <div>
-                        <label for="pais" class="block text-sm font-medium text-gray-900">
-                            País
-                        </label>
-                        <div class="mt-1">
-                            <select id="pais" name="pais" required
-                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600 sm:text-sm">
-                                <option value="">Selecciona un país</option>
-                                <option value="ES" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'ES') ? 'selected' : ''; ?>>España</option>
-                                <option value="AR" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'AR') ? 'selected' : ''; ?>>Argentina</option>
-                                <option value="BO" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'BO') ? 'selected' : ''; ?>>Bolivia</option>
-                                <option value="CL" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'CL') ? 'selected' : ''; ?>>Chile</option>
-                                <option value="CO" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'CO') ? 'selected' : ''; ?>>Colombia</option>
-                                <option value="CR" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'CR') ? 'selected' : ''; ?>>Costa Rica</option>
-                                <option value="CU" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'CU') ? 'selected' : ''; ?>>Cuba</option>
-                                <option value="DO" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'DO') ? 'selected' : ''; ?>>República Dominicana</option>
-                                <option value="EC" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'EC') ? 'selected' : ''; ?>>Ecuador</option>
-                                <option value="SV" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'SV') ? 'selected' : ''; ?>>El Salvador</option>
-                                <option value="GT" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'GT') ? 'selected' : ''; ?>>Guatemala</option>
-                                <option value="HN" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'HN') ? 'selected' : ''; ?>>Honduras</option>
-                                <option value="MX" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'MX') ? 'selected' : ''; ?>>México</option>
-                                <option value="NI" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'NI') ? 'selected' : ''; ?>>Nicaragua</option>
-                                <option value="PA" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'PA') ? 'selected' : ''; ?>>Panamá</option>
-                                <option value="PY" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'PY') ? 'selected' : ''; ?>>Paraguay</option>
-                                <option value="PE" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'PE') ? 'selected' : ''; ?>>Perú</option>
-                                <option value="PR" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'PR') ? 'selected' : ''; ?>>Puerto Rico</option>
-                                <option value="UY" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'UY') ? 'selected' : ''; ?>>Uruguay</option>
-                                <option value="VE" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'VE') ? 'selected' : ''; ?>>Venezuela</option>
-                                <option value="US" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'US') ? 'selected' : ''; ?>>Estados Unidos</option>
-                                <option value="CA" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'CA') ? 'selected' : ''; ?>>Canadá</option>
-                                <option value="PT" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'PT') ? 'selected' : ''; ?>>Portugal</option>
-                                <option value="BR" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'BR') ? 'selected' : ''; ?>>Brasil</option>
-                                <option value="FR" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'FR') ? 'selected' : ''; ?>>Francia</option>
-                                <option value="IT" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'IT') ? 'selected' : ''; ?>>Italia</option>
-                                <option value="DE" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'DE') ? 'selected' : ''; ?>>Alemania</option>
-                                <option value="GB" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'GB') ? 'selected' : ''; ?>>Reino Unido</option>
-                                <option value="OT" <?php echo (isset($old_data['pais']) && $old_data['pais'] === 'OT') ? 'selected' : ''; ?>>Otros países</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Teléfono -->
-                    <div>
-                        <label for="telefono" class="block text-sm font-medium text-gray-900">
-                            Teléfono
-                        </label>
-                        <div class="mt-1">
-                            <input type="tel" name="telefono" id="telefono" required
-                                   value="<?php echo htmlspecialchars($old_data['telefono'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
-                                   class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-offset-2 focus:outline-indigo-600 sm:text-sm">
-                        </div>
-                    </div>
-
                     <!-- Correo electrónico -->
                     <div>
                         <label for="email" class="block text-sm font-medium text-gray-900">

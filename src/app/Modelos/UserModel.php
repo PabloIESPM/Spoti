@@ -18,14 +18,12 @@ class UserModel
             $db = new \PDO("mysql:host=$host;dbname=$dbname", $db_user, $password);
             $db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
-            $stmt = $db->prepare("INSERT INTO users (nombre, primer_apellido, segundo_apellido, nick, pais, telefono, email, password_hash) VALUES (:nombre, :primer_apellido, :segundo_apellido, :nick, :pais, :telefono, :email, :password_hash)");
+            $stmt = $db->prepare("INSERT INTO users (nombre, primer_apellido, segundo_apellido, nick, email, password_hash) VALUES (:nombre, :primer_apellido, :segundo_apellido, :nick, :email, :password_hash)");
 
             $stmt->bindParam(':nombre', $user->getNombre());
             $stmt->bindParam(':primer_apellido', $user->getPrimerApellido());
             $stmt->bindParam(':segundo_apellido', $user->getSegundoApellido());
             $stmt->bindParam(':nick', $user->getNick());
-            $stmt->bindParam(':pais', $user->getPais());
-            $stmt->bindParam(':telefono', $user->getTelefono());
             $stmt->bindParam(':email', $user->getEmail());
             $stmt->bindParam(':password_hash', $user->getPasswordHash());
 

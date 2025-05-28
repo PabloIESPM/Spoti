@@ -9,8 +9,6 @@ class User
     private string $primer_apellido;
     private string $segundo_apellido;
     private string $nick;
-    private string $pais;
-    private string $telefono;
     private string $email;
     private string $passwordHash;
 
@@ -19,8 +17,6 @@ class User
         string $primer_apellido,
         string $segundo_apellido,
         string $nick,
-        string $pais,
-        string $telefono,
         string $email,
         string $passwordHash
     ) {
@@ -28,8 +24,6 @@ class User
         $this->primer_apellido = $primer_apellido;
         $this->segundo_apellido = $segundo_apellido;
         $this->nick = $nick;
-        $this->pais = $pais;
-        $this->telefono = $telefono;
         $this->email = $email;
         $this->passwordHash = $passwordHash;
     }
@@ -57,16 +51,6 @@ class User
     public function getNick(): string
     {
         return $this->nick;
-    }
-
-    public function getPais(): string
-    {
-        return $this->pais;
-    }
-
-    public function getTelefono(): string
-    {
-        return $this->telefono;
     }
 
     public function getEmail(): string
