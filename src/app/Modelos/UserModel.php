@@ -11,14 +11,14 @@ class UserModel
     {
         $host = 'localhost';
         $dbname = 'videojuegos_db';
-        $db_user = 'root'; // Renamed to avoid conflict with PDO user parameter
-        $password = '';
+        $db_user = 'root';
+        $password = 'espino';
 
         try {
             $db = new \PDO("mysql:host=$host;dbname=$dbname", $db_user, $password);
             $db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
-            $stmt = $db->prepare("INSERT INTO users (nombre, primer_apellido, segundo_apellido, nick, pais, telefono, email, password_hash) VALUES (:nombre, :primer_apellido, :segundo_apellido, :nick, :pais, :telefono, :email, :password_hash)");
+            $stmt = $db->prepare("INSERT INTO user (nombre, primer_apellido, segundo_apellido, nick, pais, telefono, email, password_hash) VALUES (:nombre, :primer_apellido, :segundo_apellido, :nick, :pais, :telefono, :email, :password_hash)");
 
             $stmt->bindParam(':nombre', $user->getNombre());
             $stmt->bindParam(':primer_apellido', $user->getPrimerApellido());
@@ -28,6 +28,7 @@ class UserModel
             $stmt->bindParam(':telefono', $user->getTelefono());
             $stmt->bindParam(':email', $user->getEmail());
             $stmt->bindParam(':password_hash', $user->getPasswordHash());
+            //$stmt->bindParam(':fecha_nacimiento', $user->getfecha_nacimiento);
 
             $stmt->execute();
             return true;

@@ -14,7 +14,7 @@ class UserController
     }
     public function show($id){
         $usuario = UserModel::getUserById($id);
-        View::mostrar_vista("mostrarDatsosUsuario.php", ['usuario' => $usuario]);
+        View::mostrar_vista("mostrarDatosUsuario.php", ['usuario' => $usuario]);
     }
     public function edit(){
         return "Esto es una vista edit";
@@ -44,14 +44,14 @@ class UserController
             return;
         }
 
-        // Duplicate Email Check
+        // Email duplicado
         if (UserModel::emailExists($_POST['email'])) {
             $errorMessage = "Este correo electrónico ya está registrado.";
             View::mostrar_vista('registro.php', ['error' => $errorMessage, 'old_data' => $_POST]);
             return;
         }
 
-        // Duplicate Nickname Check
+        // Nick duplicado
         if (UserModel::nickExists($_POST['nick'])) {
             $errorMessage = "Este nombre de usuario ya está en uso.";
             View::mostrar_vista('registro.php', ['error' => $errorMessage, 'old_data' => $_POST]);
@@ -102,8 +102,8 @@ class UserController
                 View::mostrar_vista('inicioSesion.php', ['error' => $errorMessage]);
             }
         } catch (\Respect\Validation\Exceptions\ValidationException $e) {
-            // For simplicity, using a generic error message for validation failures
-            // In a real app, you might want to pass specific error messages from $e->getMessages()
+            // Error genericvo
+
             $errorMessage = "Datos de inicio de sesión inválidos. Por favor, revise los campos.";
             View::mostrar_vista('inicioSesion.php', ['error' => $errorMessage]);
         }

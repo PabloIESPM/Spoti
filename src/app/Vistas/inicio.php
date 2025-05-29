@@ -27,7 +27,7 @@ include_once DIRECTORIO_PLANTILLA . "header.php";
                     <a href="/registro" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-indigo-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
                         Regístrate gratis
                     </a>
-                    <a href="/explorar" class="text-sm font-semibold leading-6 text-white">
+                    <a href="/videojuegos" class="text-sm font-semibold leading-6 text-white">
                         Explorar juegos <span aria-hidden="true">→</span>
                     </a>
                 </div>

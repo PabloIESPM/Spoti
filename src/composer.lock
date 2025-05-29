@@ -242,16 +242,16 @@
         },
         {
             "name": "respect/validation",
-            "version": "2.4.1",
+            "version": "2.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Respect/Validation.git",
-                "reference": "d1575eb4dde7b06f8dbc5e8d84dffb87931a40bd"
+                "reference": "7f4b3b3ec3ccdf330dfc4567bb43698018f3562a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Respect/Validation/zipball/d1575eb4dde7b06f8dbc5e8d84dffb87931a40bd",
-                "reference": "d1575eb4dde7b06f8dbc5e8d84dffb87931a40bd",
+                "url": "https://api.github.com/repos/Respect/Validation/zipball/7f4b3b3ec3ccdf330dfc4567bb43698018f3562a",
+                "reference": "7f4b3b3ec3ccdf330dfc4567bb43698018f3562a",
                 "shasum": ""
             },
             "require": {
@@ -261,7 +261,7 @@
             },
             "require-dev": {
                 "egulias/email-validator": "^3.0",
-                "giggsey/libphonenumber-for-php-lite": "^8.13",
+                "giggsey/libphonenumber-for-php-lite": "^8.13 || ^9.0",
                 "malukenho/docheader": "^1.0",
                 "mikey179/vfsstream": "^1.6",
                 "phpstan/phpstan": "^1.9",
@@ -304,25 +304,26 @@
             ],
             "support": {
                 "issues": "https://github.com/Respect/Validation/issues",
-                "source": "https://github.com/Respect/Validation/tree/2.4.1"
+                "source": "https://github.com/Respect/Validation/tree/2.4.3"
             },
-            "time": "2025-01-11T00:06:34+00:00"
+            "time": "2025-05-14T12:14:59+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.31.0",
+            "version": "v1.32.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "85181ba99b2345b0ef10ce42ecac37612d9fd341"
+                "reference": "6d857f4d76bd4b343eac26d6b539585d2bc56493"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/85181ba99b2345b0ef10ce42ecac37612d9fd341",
-                "reference": "85181ba99b2345b0ef10ce42ecac37612d9fd341",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/6d857f4d76bd4b343eac26d6b539585d2bc56493",
+                "reference": "6d857f4d76bd4b343eac26d6b539585d2bc56493",
                 "shasum": ""
             },
             "require": {
+                "ext-iconv": "*",
                 "php": ">=7.2"
             },
             "provide": {
@@ -370,7 +371,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.31.0"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.32.0"
             },
             "funding": [
                 {
@@ -386,16 +387,16 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-09T11:45:10+00:00"
+            "time": "2024-12-23T08:48:59+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {},
-    "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
 }

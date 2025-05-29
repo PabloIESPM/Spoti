@@ -32,6 +32,11 @@ $router->get('/recuperacion', function () {
     include_once DIRECTORIO_VISTAS . 'recuperacion.php';
 });
 
+//Espacio de usuario
+$router->get('/mostrarDatosUsuario', function () {
+    include_once DIRECTORIO_VISTAS . 'mostrarDatosUsuario.php';
+});
+
 // FOOTER
 $router->get('/contacto', function() {
     include_once DIRECTORIO_VISTAS . 'contacto.php';
@@ -111,6 +116,11 @@ $router->delete('/user/{id}', [UserController::class, 'destroy']);
 //Videojuegos
 
 $router->get('/videojuego/inicializar', [VideogameController::class, 'inicializar']);
+
+$router->get('/contrasena', function (){
+    return password_hash('123456', PASSWORD_DEFAULT);
+    return password_verify('123456', '$2y$10$5kv7aFxNqh64y5veSmbLce2MaVUtilKDz4MuudS3legnurV/9SKgq');
+});
 
 
 
